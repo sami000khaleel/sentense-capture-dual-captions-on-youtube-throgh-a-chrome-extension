@@ -134,7 +134,7 @@ I'm **Sami**, a software developer with a Bachelor's degree in Electrical Engine
 **I'm open to software developer roles.** Let's talk:
 
 - 📧 sami000khaleel@gmail.com
-- 🔗 *add your LinkedIn / Xing / GitHub link here*
+
 
 ---
 
