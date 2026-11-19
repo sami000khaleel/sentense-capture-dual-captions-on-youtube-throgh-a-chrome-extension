@@ -1,0 +1,57 @@
+{
+  "manifest_version": 3,
+  "name": "Learn languages - youtube dual captions and sentense capture",
+  "version": "1.8.0",
+  "description": "This extension allows you to learn languages by watching YouTube videos with dual captions and capturing sentences for practice.",
+  "permissions": [
+    "storage",
+    "declarativeNetRequestWithHostAccess"
+  ],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://www.youtube.com/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Open my library",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png"
+    }
+  },
+  "options_ui": {
+    "page": "app.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "hook.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "sentences.js",
+        "store.js",
+        "i18n.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
